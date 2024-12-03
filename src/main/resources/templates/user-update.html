@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Обновление пользователя</title>
+    </head>
+    <body>
+        <form action="#" th:action="@{/user-create}" th:object="${user}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <label for="firstName">Имя</label>
+            <input type="text" th:field="*{firstName}" id="firstName" placeholder="Имя пользователя">
+            <label for="lastName">Фамилия</label>
+            <input type="text" th:field="*{lastName}" id="lastName" placeholder="Фамилия пользователя">
+            <input type="submit" value="Обновить пользователя">
+        </form>
+    </body>
+</html>

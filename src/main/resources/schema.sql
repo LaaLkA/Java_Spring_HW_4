@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS userTable (
     id INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(25) NOT NULL,
-    lastName VARCHAR(25) NOT NULL,
-)
+    lastName VARCHAR(25) NOT NULL
+);
