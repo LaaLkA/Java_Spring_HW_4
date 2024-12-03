@@ -29,7 +29,8 @@ public class UserController {
     }
 
     @GetMapping("/user-create")
-    public String createUserForm(User user) {
+    public String createUserForm(Model model) {
+        model.addAttribute("user", new User());
         return "user-create";
     }
 
@@ -47,7 +48,11 @@ public class UserController {
 
     @GetMapping("/user-update")
     public String updateUser(@RequestParam int id, Model model) {
-        model.addAttribute("user", userService.findUserById(id));
+        User user = userService.findUserById(id);
+        if (user == null) {
+            return "redirect:/users";
+        }
+        model.addAttribute("user", user);
         return "user-update";
     }
 
@@ -56,7 +61,4 @@ public class UserController {
         userService.updateUser(user);
         return "redirect:/users";
     }
-
-
-
 }

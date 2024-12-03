@@ -21,12 +21,12 @@ public class User {
     /**
      * Поле имени
      */
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "firstName", nullable = false)
     private String firstName;
 
     /**
      * Поле фамилии
      */
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "lastName", nullable = false)
     private String lastName;
 }
